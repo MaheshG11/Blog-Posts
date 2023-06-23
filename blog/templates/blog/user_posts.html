@@ -1,0 +1,49 @@
+{% extends "blog/base.html" %}
+{% block content%}
+    <h1 class="mb-3  text-white">Posts by {{view.kwargs.username}}</h1>
+    <h3 class="text-secondary">Number of posts : {{ page_obj.paginator.count}}</h3>
+    {% for post in posts  %}
+    <div class="bg-steel rounded container border border-white" style="margin-top: 40px ;padding-bottom: 5px;margin-bottom: 20px;">
+      <div style="padding: 20px ;" >
+      <img class="rounded-circle article-img bg-steel align-middle " src="{{post.Author.profile.img.url}}" >
+      <a class="mr-2 h4 align-middle" href="{% url 'user-post' post.Author.username %}">{{ post.Author }}</a>
+      
+    </div>
+        <div class="media-body bg-steel ">
+          <div class="article-metadata">
+        
+            
+          </div>
+          <h2><a class="article-title text-dark " href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+          <p class="article-content ">{{ post.content }}</p>
+        </div>
+        <small class="text-dark text-right align-bottom font-weight-bold">{{ post.date_posted|date:"F d, Y" }}</small>
+      </div>
+    {% endfor %} 
+    {% if is_paginated %}
+      {% if page_obj.has_previous and page_obj.previous_page_number >= 2 %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">first</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      
+      
+      
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{num}}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{num}}</a>
+        {% endif %}
+      {% endfor %}
+    
+      {% if page_obj.has_next %}
+        
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Previous</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">last</a>
+      
+      {% endif %}
+
+    
+    {% endif %}
+{% endblock content %}
