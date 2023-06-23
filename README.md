@@ -1,13 +1,16 @@
 ﻿# Blod-Posts
 For the above project to run, following requirements are to be satisfied.
 Complete requirements in the given order to run correctly.
-Requirements :
-  1.Python - https://www.python.org/downloads/
-  2.Django - run the command -  $ pip install Django
-  3.django-crispy-forms - run the command - $ pip install django-crispy-forms
-  4.pillow - run the command - $ pip install Pillow
+Requirements :<br>
+  1.Python - https://www.python.org/downloads/ <br>
+  2.Django - run the command -  <code>$ pip install Django</code>
+	<br>
+  3.django-crispy-forms - run the command - <code>$ pip install django-crispy-forms</code>
+	<br>
+  4.pillow - run the command - <code>$ pip install Pillow</code>
+	<br>
 
 If requirements are staisfied open terminal in the Blog-Posts folder 
-and run the command - 
+and run the command - <br>
 
     $ python manage.py runserver
