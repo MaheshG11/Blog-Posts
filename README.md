@@ -14,3 +14,6 @@ If requirements are staisfied open terminal in the Blog-Posts folder
 and run the command - <br>
 
     $ python manage.py runserver
+
+
+Credits :- Corey Schafer
