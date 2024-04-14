@@ -1,4 +1,5 @@
-﻿# Blod-Posts
+﻿# Blog-Posts
+A Website built using a very famous python framework, Django. This website aims to give users a platform where they can share their create accounts and share blogs. Users can create update and delete users' blogs and account. New Blogs that are updated on the website can be seen by everyone who visits the website and you can see the most recently uploaded Blogs first.
 For the above project to run, following requirements are to be satisfied.
 Complete requirements in the given order to run correctly.
 Requirements :<br>
